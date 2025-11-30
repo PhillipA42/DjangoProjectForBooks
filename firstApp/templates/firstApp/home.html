@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+
+{% block content%}
+
+<div class="container py-4">
+    <h1 class="display-4 text-primary fw-bold">The Study hub</h1>
+    <hr>
+</div>
+<p class="container text-primary-emphasis fs-6">Discover a world of stories, knowledge, and imagination at BookHaven, your go-to online bookstore. Whether you’re a passionate reader, a student, or a lifelong learner, BookHaven brings thousands of titles right to your fingertips. From bestselling novels and timeless classics to academic textbooks and niche genres, our carefully curated collection has something for everyone.</p>
+
+<div class="container py-2 text-primary-emphasis">
+    <hr>
+    <h1 class="display-4 text-primary fw-bold">Our Mission</h1>
+    <p>Our mission is more than just selling books we aim to foster a community of readers who share a love for literature and learning. Whether you’re exploring new worlds through fiction, deepening your knowledge with non-fiction, or finding the perfect gift, BookHaven makes your reading journey seamless and enjoyable.</p>
+</div>
+
+{% for book in books %}
+<div class="display-6">{{book.name}}</div>
+<p class="lead">{{book.description}}</p>
+<hr>
+
+{% endfor%}
+
+</div>
+</div>
+
+{% endblock%}

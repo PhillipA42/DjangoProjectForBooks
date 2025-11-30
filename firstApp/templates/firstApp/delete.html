@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="display-4  fw-bold">Book Store</h1>
+
+    <hr>
+
+
+    <div class="container py-5">
+        <div>
+
+            <div class="display-6">{{book.name}} </div>
+            <p class="lead">{{book.description}}</p>
+            <span class="badge bg-danger  text-light px-3 py-2">ksh. {{book.price}} /=</span>
+            <hr>
+
+        </div>
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <a href="{{request.META.HTTP_REFERER}}" class="btn py-1 px-4 bg-success text-light fw-bold text-decoration-none">go back! </a>
+   
+        <input type="submit" value="Delete book: {{book.name}}" class="btn text-light fw-bold bg-danger py-1 px-4 ">
+
+    </form>
+
+</div>
+
+{% endblock %}

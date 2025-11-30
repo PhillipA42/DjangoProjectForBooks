@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="display-4  text-primary fw-bold">BookHaven</h1>
+    <hr>
+    <div>
+
+        <div class="display-6">{{book.name}} </div>
+        <p class="lead">{{book.description}}</p>
+        <span class="badge bg-danger  text-light px-3 py-2">ksh. {{book.price}} /=</span>
+        <hr>
+        <a href="{% url 'update-book' book.id  %}" class="text-decoration-none text-success">update book > </a><br>
+        <a href="{% url 'delete-book' book.id  %}" class="text-decoration-none text-danger">delete book > </a>
+
+    </div>
+</div>
+
+{% endblock %}

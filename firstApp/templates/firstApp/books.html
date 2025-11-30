@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="display-4  text-primary fw-bold">BookHaven</h1>
+    
+    <a href="{% url 'create-book' %}" class="text-decoration-none bg-primary text-dark badge px-3 py-2" >add book</a>
+
+    <hr>
+    <div>
+        {% for book in books %}
+        <div class="display-6">{{book.name}} </div>
+        <p class="lead">{{book.description}}</p>
+        <a href="{% url 'read-one-book' book.id  %}" class="text-decoration-none text-primary">see more > </a><br>
+        <a href="{% url 'update-book' book.id  %}" class="text-decoration-none text-success">update book > </a><br>
+        <a href="{% url 'delete-book' book.id  %}" class="text-decoration-none text-danger">delete book > </a>
+      <br>  <span class="lead fs-6">CREATED AT: {{book.created_at}}</span>
+        <span class="lead fs-6">UPDATED AT: {{book.updated_at}}</span>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
